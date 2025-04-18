@@ -28,7 +28,7 @@ console.log(personage);
 let ask = confirm("p4iti tdkhale wla tamchi b7alak")
 
 while (true) {
-    let ask = prompt("wate do you want 'loge in'  or, 'sing up' or,'change password'").toLowerCase().trim()
+    let ask = prompt("wate do you want 'loge in'  or, 'sing up' or,'change password' or 'exit'").toLowerCase().trim()
     switch (ask) {
         case 'sing up':
             while (true) {
@@ -104,7 +104,7 @@ while (true) {
                 let ta9labe2 = personage.email.indexOf(ta9labe);
                 if (ta9labe2 != -1) {
                     let code = prompt("dire code dyalake bache tadkhole").trim()
-                    console.log(code);
+                 
 
                     if (personage.password[ta9labe2] === code) {
                         alert("ahlane w sahlane " + personage.name[ta9labe2])
@@ -117,9 +117,35 @@ while (true) {
 
             }
             break;
-        default:
+            case "change password":
+                if (ask == "change password") {
+                    let change = prompt("dakhale email dyalake bache tbadale l code ").split(" ").join("")
+                    let change1 = personage.email.indexOf(change);
+                    if (change1 != -1) {
+                       let codeJdide =prompt("ktabe l code jdide ")
+                       personage.passwooooord(codeJdide[change1])
+                    }else{
+                        alert("akhoya sire t9ayade ba3da 3ade aji badale l code")
+                    }
+    
+    
+    
+    
+                }else{
+                    alert("ra ma3andake ma tbadale ha l3are")
+                }
+                break;
+           
+           case'exit':
+           if (ask=="exit") {
+            alert("nharake mabrouke")
+            
+           }
+           break;
+                default:
             break;
     }
+
 
 
 
