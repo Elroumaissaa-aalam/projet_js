@@ -3,10 +3,10 @@
 let ask = prompt("wate do you wane 'loge in' or, 'sing up' or,'change passwerd'").trim()
 
 class Persone {
-    constructor(email, name, pasworde) {
+    constructor(email, name, passwerd) {
         this.email = email
         this.name = name
-        this.passwerd = pasworde
+        this.passwerd = passwerd
     }
 }
 let personage = new Persone([], [], [])
@@ -24,14 +24,14 @@ if (ask == "loge in") {
         personage.name = test
         if (test.length > 5) {
             let pasworde = prompt("enter your passwerd")
-            personage.pasworde = pasworde
+            personage.passwerd = pasworde
             let taikede = prompt("akade lpasworde dyalake")
             if (pasworde === taikede) {
                 alert("mar7ba bike")
 
             } else {
                 alert("ra lcode li 3awdti ctabti 4alate")
-                personage.pasworde = []
+                personage.passwerd =[]
                 personage.name = []
                 personage.email = []
             }
