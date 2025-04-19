@@ -25,7 +25,7 @@ class Persone {
     }
 
 }
-let personage = new Persone([], [], [], [], [])
+let personage = new Persone(["rourouaalam@gmail.com"], ["rourou"], ["123456789"], [20], [1000,])
 console.log(personage);
 
 
@@ -113,30 +113,68 @@ while (ask == true) {
                     if (personage.password[ta9labe2] === code) {
                         alert("ahlane w sahlane " + personage.name[ta9labe2])
                         alert("fine tsagalti m3ana walate 3andake 1000 dh mabrooooooooke")
-                        personage.moneyyyy(1000)
+
+
+
                         let lflouse = confirm(" ba4i ta3rafe momaisate ta3e l bq ")
                         while (lflouse == true) {
                             let lflouse = prompt("3andake l7a9e 't7ate flouse' wla 'lkridi' wla 'dkhale bihoem machro3e'")
-                            if (lflouse == "n7ate flouse") {
-                                let ch7ale = parseInt(prompt("ch7ale ba4i t7ate"))
-                                if (ch7ale < 1000) {
-                                    personage.money = parseInt(personage.money += ch7ale)
-                                    alert("haya t7atate " + personage.money)
+                            switch (lflouse) {
+                                case 'n7ate flouse':
+                                    if (lflouse == "n7ate flouse") {
+                                        let ch7ale = parseInt(prompt("ch7ale ba4i t7ate"))
+                                        if (ch7ale < 1000) {
+                                            //mab4ache i t7awale liya numbre 
+                                            personage.money = personage.money + ch7ale
+                                            alert("wlate 3andake " + personage.money)
+                                        }
+                                    } else {
+                                        alert("man9darche nkharjake ta ana wa7la hna")
+                                    }
+                                    break;
+                                case 'lkridi':
 
-                                }
-                            } else {
-                                alert("man9darche nkharjake ta ana wa7la hna")
+                                    if (lflouse == "lkridi") {
+                                        let lkridi = prompt("ch7ale b4iti ta3e l kridi").trim();
+                                        lkridi = parseInt(lkridi);
+                                        if (lkridi <=1000) {
+                                            personage.money * 0.20
+                                            personage.money -= lkridi * 1.20;
+                                            alert("hanta tsalafti " + personage.money);
+
+                                        }
+                                    } else {
+                                        alert("3awade chofe 4ire ache ktabti ")
+                                    }
+
+
+                                    break;
+
+
+
+                                    case'ndkhale machrou3e':
+
+                                    if (lflouse== 'ndkhale machrou3e') {
+                                        let l7atane=prompt("ch7ale b4iti t7ate")
+                                        if (l7atane<=1000) {
+                                            personage.money*0.20
+                                            alert("hanta walate 3andake "+personage.money)
+                                            
+                                            
+                                        }
+                                    }
+
+
+
+                                    break;
+                                default:
+                                    break;
                             }
-                            if (ch7ale == "lkridi") {
 
 
-                            }
+                            alert("sf rake khrajti mane l banq ")
+
                         }
-                        alert("sf rake khrajti mane l banq ")
-
-
-
-
 
 
 
