@@ -1,11 +1,12 @@
 
 
 class Persone {
-    constructor(email, name, password, age) {
+    constructor(email, name, password, age, money) {
         this.email = email
         this.name = name
         this.password = password
         this.age = age
+        this.money = parseInt(money)
     }
     emaiiil(item) {
         this.email.push(item);
@@ -19,15 +20,18 @@ class Persone {
     naaaame(ite) {
         this.name.push(ite);
     }
+    moneyyyy(e) {
+        this.money.push(e)
+    }
 
 }
-let personage = new Persone([], [], [], [])
+let personage = new Persone([], [], [], [], [])
 console.log(personage);
 
 
 let ask = confirm("p4iti tdkhale wla tamchi b7alak")
 
-while (true) {
+while (ask == true) {
     let ask = prompt("wate do you want 'loge in'  or, 'sing up' or,'change password' or 'exit'").toLowerCase().trim()
     switch (ask) {
         case 'sing up':
@@ -104,10 +108,45 @@ while (true) {
                 let ta9labe2 = personage.email.indexOf(ta9labe);
                 if (ta9labe2 != -1) {
                     let code = prompt("dire code dyalake bache tadkhole").trim()
-                 
+
 
                     if (personage.password[ta9labe2] === code) {
                         alert("ahlane w sahlane " + personage.name[ta9labe2])
+                        alert("fine tsagalti m3ana walate 3andake 1000 dh mabrooooooooke")
+                        personage.moneyyyy(1000)
+                        let lflouse = confirm(" ba4i ta3rafe momaisate ta3e l bq ")
+                        while (lflouse == true) {
+                            let lflouse = prompt("3andake l7a9e 't7ate flouse' wla 'lkridi' wla 'dkhale bihoem machro3e'")
+                            if (lflouse == "n7ate flouse") {
+                                let ch7ale = parseInt(prompt("ch7ale ba4i t7ate"))
+                                if (ch7ale < 1000) {
+                                    personage.money = parseInt(personage.money += ch7ale)
+                                    alert("haya t7atate " + personage.money)
+
+                                }
+                            } else {
+                                alert("man9darche nkharjake ta ana wa7la hna")
+                            }
+                            if (ch7ale == "lkridi") {
+
+
+                            }
+                        }
+                        alert("sf rake khrajti mane l banq ")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                     } else {
                         alert("ra l code dyalake 4alate")
                     }
@@ -117,32 +156,33 @@ while (true) {
 
             }
             break;
-            case "change password":
-                if (ask == "change password") {
-                    let change = prompt("dakhale email dyalake bache tbadale l code ").split(" ").join("")
-                    let change1 = personage.email.indexOf(change);
-                    if (change1 != -1) {
-                       let codeJdide =prompt("ktabe l code jdide ")
-                       personage.passwooooord(codeJdide[change1])
-                    }else{
-                        alert("akhoya sire t9ayade ba3da 3ade aji badale l code")
-                    }
-    
-    
-    
-    
-                }else{
-                    alert("ra ma3andake ma tbadale ha l3are")
+        case "change password":
+            if (ask == "change password") {
+                let change = prompt("dakhale email dyalake bache tbadale l code ").split(" ").join("")
+                let change1 = personage.email.indexOf(change);
+                if (change1 != -1) {
+                    let codeJdide = prompt("ktabe l code jdide ")
+                    personage.passwooooord(codeJdide[change1])
+                } else {
+                    alert("akhoya sire t9ayade ba3da 3ade aji badale l code")
                 }
-                break;
-           
-           case'exit':
-           if (ask=="exit") {
+
+
+
+
+            } else {
+                alert("ra ma3andake ma tbadale ha l3are")
+            }
+            break;
+
+        case 'exit':
+            if (ask == "exit") {
+                alert("nharake mabrouke")
+
+            }
+            break;
+        default:
             alert("nharake mabrouke")
-            
-           }
-           break;
-                default:
             break;
     }
 
@@ -152,6 +192,8 @@ while (true) {
 
 
 }
+
+alert("okey sire b7alake")
 
 
 
